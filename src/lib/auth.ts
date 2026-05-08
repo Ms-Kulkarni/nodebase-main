@@ -5,6 +5,11 @@ import prisma from "@/lib/db";
 import { polarClient } from "./polar";
 
 export const auth = betterAuth({
+  baseURL: process.env.BETTER_AUTH_URL,
+  trustedOrigins: [
+    "http://localhost:3000",
+    process.env.BETTER_AUTH_URL!,
+  ].filter(Boolean),
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
@@ -30,15 +35,15 @@ export const auth = betterAuth({
         checkout({
           products: [
             {
-              productId: "f81be8a8-45e1-4e45-a1e9-b9d3fd79f814",
+              productId: "686c10f4-bfe1-4f04-94fd-184594395ec1",
               slug: "pro",
-            }
+            },
           ],
           successUrl: process.env.POLAR_SUCCESS_URL,
           authenticatedUsersOnly: true,
         }),
         portal(),
       ],
-    })
-  ]
+    }),
+  ],
 });
