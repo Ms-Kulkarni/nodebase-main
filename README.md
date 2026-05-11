@@ -34,7 +34,7 @@ A powerful Next.js application foundation featuring workflow automation, authent
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/BhushanLagare7/nodebase.git
+   git clone https://github.com/ms-kulkarni/nodebase-main.git
    cd nodebase
    ```
 
